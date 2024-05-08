@@ -217,10 +217,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         /* Create gameover label */
         gameOverLabel = SKLabelNode(fontNamed:"KenVector-Future")
-        gameOverLabel.position = CGPoint( x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.74)
+        gameOverLabel.position = CGPoint( x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.7)
         gameOverLabel.zPosition = 100
         gameOverLabel.text = "GameOver"
-        gameOverLabel.fontSize = 30
+        gameOverLabel.fontSize = 25
         gameOverLabel.setScale(scaleFactor)
         gameOverLabel.fontColor = UIColor.orange
         gameOverLabel.isHidden = true
@@ -250,7 +250,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         /* Create showBestScore label */
         showBestScoreLabel = SKLabelNode(fontNamed:"KenVector-Future")
-        showBestScoreLabel.position = CGPoint( x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.47)
+        showBestScoreLabel.position = CGPoint( x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.48)
         showBestScoreLabel.zPosition = 100
         showBestScoreLabel.text = "BEST"
         showBestScoreLabel.fontSize = 20
@@ -261,7 +261,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         /* Create best score label */
         bestScoreLabel = SKLabelNode(fontNamed:"KenPixel-Blocks")
-        bestScoreLabel.position = CGPoint( x: self.frame.size.width * 0.75, y: self.frame.size.height * 0.46)
+        bestScoreLabel.position = CGPoint( x: self.frame.size.width * 0.75, y: self.frame.size.height * 0.47)
         bestScoreLabel.zPosition = 100
         bestScoreLabel.text = ""
         bestScoreLabel.fontSize = 40
