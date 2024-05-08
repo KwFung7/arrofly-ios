@@ -36,36 +36,32 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
         
         /* Initialize Google Mobile Ads with app ID */
-        /*ADMobileAds.configure(withApplicationID: "ca-app-pub-6784152634624245~7654511509")*/
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-6784152634624245~7654511509")
         
-        
-        /*
         /* Goodgle mobile ads banner setting */
          
         bannerView.adSize = kGADAdSizeSmartBannerPortrait
         bannerView.adUnitID = "ca-app-pub-6784152634624245/4126577452"
+        // bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174" // Test Ads
         bannerView.rootViewController = self
-        let request = GADRequest()
-        request.testDevices = ["b7d98a2c813a2a94777d7aad983c4a20"]
 
         /* Request interstitial */
         interstitialAd = GADInterstitial(adUnitID: "ca-app-pub-6784152634624245/5658903559")
-        interstitialAd.load(request)
+        // interstitialAd = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")  // Test Ads
+        interstitialAd.load(GADRequest())
         interstitialAd = reloadInterstitialAd()
 
         /* Set observer to pass function to GameScene */
         NotificationCenter.default.addObserver(self, selector: #selector(showInterstitialAd), name: NSNotification.Name(rawValue: "showAd"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showBanner), name: NSNotification.Name(rawValue: "showBanner"), object: nil)
-         
-        */
     }
     
-    /*
     func reloadInterstitialAd() -> GADInterstitial {
         
         /* Reload new interstitial */
         let interstitial = GADInterstitial(adUnitID: "ca-app-pub-6784152634624245/5658903559")
-        interstitial.delegate = self
+        // let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // Test Ads
+        // interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
     }
@@ -87,8 +83,6 @@ class GameViewController: UIViewController {
             interstitialAd.present(fromRootViewController: self)
         }
     }
-     
-    */
     
     override var shouldAutorotate : Bool {
         return true
